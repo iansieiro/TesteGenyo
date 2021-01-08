@@ -1,0 +1,42 @@
+static void Main(string[] args)
+        {
+            //arrays com o banco de nomes
+            string[] nomesFemininos = new string[5] {"Belinha", "Laika", "Dolly", "Jujuba", "Luna"};
+            string[] nomesMasculinos = new string[5] {"Júpiter", "Lup", "Sirius", "Rex", "Spike"};
+            //variável para armazenar o sexo do pet
+            char sexo;
+
+            Console.WriteLine("Insira o sexo do pet (M para masculino ou F para feminino): ");
+            sexo = char.Parse(Console.ReadLine());
+
+            Console.WriteLine("Que tal " + GeradorDeNome(sexo) + "? (S para sim ou N para não)");
+            char opcao = char.Parse(Console.ReadLine());
+            //opção de troca
+            while (opcao == 'N' || opcao == 'n') 
+            {
+                Console.WriteLine("Que tal " + GeradorDeNome(sexo) + "? (S para sim ou N para não)");
+                opcao = char.Parse(Console.ReadLine());
+            }
+
+            Console.ReadKey();
+            //método recebe o char que designa o sexo e retorna um nome aleatório do banco de nomes do sexo específico 
+            string GeradorDeNome(char sexo) 
+            {
+                string nome;
+                Random r = new Random();
+                if (sexo == 'M' || sexo == 'm')
+                {
+                    nome = nomesMasculinos[r.Next(0, 5)];
+                    return nome;
+                }
+                else if (sexo == 'F' || sexo == 'f')
+                {
+                    nome = nomesFemininos[r.Next(0, 5)];
+                    return nome;
+                }
+                else 
+                {
+                    return "Código de sexo inválido.";
+                }
+            }
+        }
