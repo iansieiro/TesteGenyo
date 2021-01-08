@@ -1,0 +1,49 @@
+static void Main(string[] args)
+        {
+            //váriavel inteira para armazenar o número a ser inserido
+            int num;
+
+            //lê o número inseirdo e atribui ele à variável
+            Console.WriteLine("Insira o número: ");
+            num = int.Parse(Console.ReadLine());
+
+            ParOuImpar(num);
+
+            PositivoOuNegativo(num);
+
+            Console.ReadKey();
+            
+            //método para verificar se é par ou impar
+            void ParOuImpar(int num) 
+            {
+                //verifica se o resto da divisão do número por dois é igual a zero (se a divisão é exata), o que significa que é par
+                if (num % 2 == 0)
+                {
+                    Console.WriteLine("É par");
+                }
+                //se não, é impar
+                else
+                {
+                    Console.WriteLine("É impar");
+                }
+            }
+
+            void PositivoOuNegativo(int num)
+            {
+                //verifica se o número é maior do que zero, ou seja, positivo
+                if (num > 0)
+                {
+                    Console.WriteLine("É positivo");
+                }
+                //varifica se o número é igual a zero, ou seja, neutro (nem positivo nem negativo)
+                else if (num == 0) 
+                {
+                    Console.WriteLine("É neutro");
+                }
+                //se o número não é maior nem igual a zero, então ele é negativo
+                else
+                {
+                    Console.WriteLine("É negativo");
+                }
+            }
+        }
