@@ -1,0 +1,46 @@
+static void Main(string[] args)
+        {
+            int horas;
+            int minutos;
+            int segundos;
+            int aux;
+
+            Console.WriteLine("Insira a hora de início da partida: ");
+            horas = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira o minuto de início da partida: ");
+            minutos = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira o segundo de início da partida: ");
+            segundos = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Insira a hora de término da partida: ");
+            aux = int.Parse(Console.ReadLine());
+            horas = aux - horas;
+            if (horas < 0)
+            {
+                horas += 24;
+            }
+
+            Console.WriteLine("Insira o minuto de término da partida: ");
+            aux = int.Parse(Console.ReadLine());
+            minutos = aux - minutos;
+            if (minutos < 0)
+            {
+                minutos += 60;
+                horas--;
+            }
+
+            Console.WriteLine("Insira o segundo de término da partida: ");
+            aux = int.Parse(Console.ReadLine());
+            segundos = aux - segundos;
+            if (segundos < 0)
+            {
+                segundos += 60;
+                minutos--;
+            }
+
+            Console.WriteLine("A partida durou " + horas + " horas, " + minutos + " minutos e " + segundos + " segundos.");
+
+            Console.ReadKey();
+        }
