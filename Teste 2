@@ -1,10 +1,13 @@
 static void Main(string[] args)
         {
+            //variáveis para armazenar as informações de hora
             int horas;
             int minutos;
             int segundos;
+            //variável auxiliar para comparação com as anteriores
             int aux;
-
+            
+            //recebe as informações iniciais de hora
             Console.WriteLine("Insira a hora de início da partida: ");
             horas = int.Parse(Console.ReadLine());
 
@@ -13,7 +16,8 @@ static void Main(string[] args)
 
             Console.WriteLine("Insira o segundo de início da partida: ");
             segundos = int.Parse(Console.ReadLine());
-
+            
+            //recebe as informações finais de hora, comapra com as iniciais e atualiza o valor delas com a diferença do tempo;
             Console.WriteLine("Insira a hora de término da partida: ");
             aux = int.Parse(Console.ReadLine());
             horas = aux - horas;
